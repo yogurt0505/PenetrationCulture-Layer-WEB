@@ -111,8 +111,8 @@ var Module=typeof unityFramework!="undefined"?unityFramework:{};var readyPromise
               this.video.srcObject = stream;
               this.video.addEventListener('loadedmetadata', () => {
                   this.video.play();
-                  this.video.width = this.video.videoWidth;
-                  this.video.height = this.video.videoHeight;
+                  this.video.width = {  min: 640, ideal: 1280, max: 1920 };
+                  this.video.height = { min: 480, ideal: 720, max: 1080 };
                   resolve();
               });
           });
